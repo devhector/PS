@@ -12,6 +12,8 @@
 
 ---
 ### O que precisa ser feito:
-- [ ] verificação se chega 16bits em instructions
+- [x] verificação se chega 16bits em instructions
 - [ ] lidar overflow
-- [ ] limpar tela depois do error 
+- [x] limpar tela depois do error 
+- [ ] Criar Interface para registradores igual as instruções
+- [ ]
