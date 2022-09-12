@@ -6,12 +6,30 @@
  * @author matheus cardoso
  * @author leonardo marotta
  */
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap; 
+import java.util.Scanner;
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 public class VirtualMachine extends javax.swing.JFrame {
 
     public VirtualMachine() {
         initComponents();
+<<<<<<< HEAD
+<<<<<<< HEAD
         Memory memory = new Memory();
         setInitValues(memory.get());   
+=======
+>>>>>>> 76b42c5 (fix: pull)
+=======
+        Memory memory = new Memory();
+        setInitValues(memory.get());   
+>>>>>>> 4d26aad (fix: pull)
     }
 
     @SuppressWarnings("unchecked")
@@ -36,6 +54,8 @@ public class VirtualMachine extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         progressBar = new javax.swing.JProgressBar();
         jScrollPane5 = new javax.swing.JScrollPane();
+<<<<<<< HEAD
+<<<<<<< HEAD
         accValue = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         pcValue = new javax.swing.JTextArea();
@@ -47,6 +67,26 @@ public class VirtualMachine extends javax.swing.JFrame {
         reValue = new javax.swing.JTextArea();
         jScrollPane10 = new javax.swing.JScrollPane();
         riValue = new javax.swing.JTextArea();
+=======
+        regValue1 = new javax.swing.JTextArea();
+=======
+        accValue = new javax.swing.JTextArea();
+>>>>>>> 4d26aad (fix: pull)
+        jScrollPane6 = new javax.swing.JScrollPane();
+        pcValue = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        spValue = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        mopValue = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        reValue = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+<<<<<<< HEAD
+        regValue5 = new javax.swing.JTextArea();
+>>>>>>> 76b42c5 (fix: pull)
+=======
+        riValue = new javax.swing.JTextArea();
+>>>>>>> 4d26aad (fix: pull)
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -76,11 +116,20 @@ public class VirtualMachine extends javax.swing.JFrame {
                 btnRunActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         btnRun.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 btnRunKeyPressed(evt);
             }
         });
+<<<<<<< HEAD
+=======
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         btnHelp.setText("Ajuda");
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +208,10 @@ public class VirtualMachine extends javax.swing.JFrame {
                 {null, null},
                 {null, null},
                 {null, null},
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
                 {null, null},
                 {null, null},
                 {null, null},
@@ -194,6 +247,11 @@ public class VirtualMachine extends javax.swing.JFrame {
                 {null, null},
                 {null, null},
                 {null, null},
+<<<<<<< HEAD
+=======
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
                 {null, null}
             },
             new String [] {
@@ -225,56 +283,131 @@ public class VirtualMachine extends javax.swing.JFrame {
         jScrollPane5.setAutoscrolls(true);
         jScrollPane5.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         accValue.setColumns(20);
         accValue.setRows(1);
         accValue.setTabSize(1);
         accValue.setAutoscrolls(false);
         jScrollPane5.setViewportView(accValue);
+<<<<<<< HEAD
+=======
+        regValue1.setColumns(20);
+        regValue1.setRows(1);
+        regValue1.setTabSize(1);
+        regValue1.setAutoscrolls(false);
+        jScrollPane5.setViewportView(regValue1);
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         jScrollPane6.setAutoscrolls(true);
         jScrollPane6.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         pcValue.setColumns(20);
         pcValue.setRows(1);
         pcValue.setTabSize(1);
         pcValue.setAutoscrolls(false);
         jScrollPane6.setViewportView(pcValue);
+<<<<<<< HEAD
+=======
+        regValue2.setColumns(20);
+        regValue2.setRows(1);
+        regValue2.setTabSize(1);
+        regValue2.setAutoscrolls(false);
+        jScrollPane6.setViewportView(regValue2);
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         jScrollPane7.setAutoscrolls(true);
         jScrollPane7.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         spValue.setColumns(20);
         spValue.setRows(1);
         spValue.setTabSize(1);
         spValue.setAutoscrolls(false);
         jScrollPane7.setViewportView(spValue);
+<<<<<<< HEAD
+=======
+        regValue3.setColumns(20);
+        regValue3.setRows(1);
+        regValue3.setTabSize(1);
+        regValue3.setAutoscrolls(false);
+        jScrollPane7.setViewportView(regValue3);
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         jScrollPane8.setAutoscrolls(true);
         jScrollPane8.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         mopValue.setColumns(20);
         mopValue.setRows(1);
         mopValue.setTabSize(1);
         mopValue.setAutoscrolls(false);
         jScrollPane8.setViewportView(mopValue);
+<<<<<<< HEAD
+=======
+        regValue4.setColumns(20);
+        regValue4.setRows(1);
+        regValue4.setTabSize(1);
+        regValue4.setAutoscrolls(false);
+        jScrollPane8.setViewportView(regValue4);
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         jScrollPane9.setAutoscrolls(true);
         jScrollPane9.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         reValue.setColumns(20);
         reValue.setRows(1);
         reValue.setTabSize(1);
         reValue.setAutoscrolls(false);
         jScrollPane9.setViewportView(reValue);
+<<<<<<< HEAD
+=======
+        regValue6.setColumns(20);
+        regValue6.setRows(1);
+        regValue6.setTabSize(1);
+        regValue6.setAutoscrolls(false);
+        jScrollPane9.setViewportView(regValue6);
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 
         jScrollPane10.setAutoscrolls(true);
         jScrollPane10.setWheelScrollingEnabled(false);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         riValue.setColumns(20);
         riValue.setRows(1);
         riValue.setTabSize(1);
         riValue.setAutoscrolls(false);
         jScrollPane10.setViewportView(riValue);
+<<<<<<< HEAD
 
         jLabel2.setText("ACC");
 
@@ -287,6 +420,31 @@ public class VirtualMachine extends javax.swing.JFrame {
         jLabel6.setText("RI");
 
         jLabel7.setText("RE");
+=======
+        regValue5.setColumns(20);
+        regValue5.setRows(1);
+        regValue5.setTabSize(1);
+        regValue5.setAutoscrolls(false);
+        jScrollPane10.setViewportView(regValue5);
+=======
+>>>>>>> 4d26aad (fix: pull)
+
+        jLabel2.setText("ACC");
+
+        jLabel3.setText("PC");
+
+        jLabel4.setText("SP");
+
+        jLabel5.setText("MOP");
+
+        jLabel6.setText("RI");
+
+<<<<<<< HEAD
+        jLabel7.setText("5");
+>>>>>>> 76b42c5 (fix: pull)
+=======
+        jLabel7.setText("RE");
+>>>>>>> 4d26aad (fix: pull)
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,10 +455,27 @@ public class VirtualMachine extends javax.swing.JFrame {
                 .addComponent(btnHelp)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+<<<<<<< HEAD
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> 76b42c5 (fix: pull)
+=======
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> 4d26aad (fix: pull)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -320,10 +495,15 @@ public class VirtualMachine extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
                                                 .addGap(33, 33, 33)
                                                 .addComponent(jLabel4)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(24, 24, 24)
                                                 .addComponent(jLabel2)
@@ -350,6 +530,61 @@ public class VirtualMachine extends javax.swing.JFrame {
                                                         .addComponent(jLabel6)
                                                         .addGap(18, 18, 18)
                                                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+=======
+                                                .addGap(34, 34, 34)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jLabel4)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jLabel3)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+=======
+>>>>>>> 4d26aad (fix: pull)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(24, 24, 24)
+                                                .addComponent(jLabel2)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel7)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel6)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel7)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+>>>>>>> 76b42c5 (fix: pull)
+=======
+                                                .addGap(40, 40, 40)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jLabel5)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jLabel6)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+>>>>>>> 4d26aad (fix: pull)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -382,7 +617,16 @@ public class VirtualMachine extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
+<<<<<<< HEAD
+<<<<<<< HEAD
                         .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                        .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100))
+>>>>>>> 76b42c5 (fix: pull)
+=======
+                        .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> 4d26aad (fix: pull)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
@@ -417,14 +661,28 @@ public class VirtualMachine extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnRunCicle)
                         .addGap(18, 18, 18)
+<<<<<<< HEAD
+<<<<<<< HEAD
                         .addComponent(btnDebug)))
                 .addGap(100, 100, 100))
+=======
+                        .addComponent(btnDebug)
+                        .addGap(100, 100, 100))))
+>>>>>>> 76b42c5 (fix: pull)
+=======
+                        .addComponent(btnDebug)))
+                .addGap(100, 100, 100))
+>>>>>>> 4d26aad (fix: pull)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
         Register acc = new Register();
         Register pc = new Register();
         Register sp  = new Register();
@@ -464,6 +722,7 @@ public class VirtualMachine extends javax.swing.JFrame {
             }
         }
         System.out.println("limpar tela");
+<<<<<<< HEAD
     }//GEN-LAST:event_btnRunActionPerformed
     
     public void attScreen(Register acc, Register pc, Register sp , Register mop, Register ri, Register re){
@@ -486,14 +745,52 @@ public class VirtualMachine extends javax.swing.JFrame {
             }
         }
     }
+=======
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRunActionPerformed
+
+>>>>>>> 76b42c5 (fix: pull)
+=======
+    }//GEN-LAST:event_btnRunActionPerformed
+    
+    public void attScreen(Register acc, Register pc, Register sp , Register mop, Register ri, Register re){
+        accValue.setText(acc.getValue());
+        pcValue.setText(pc.getValue());
+        spValue.setText(sp.getValue());
+        mopValue.setText(mop.getValue());
+        riValue.setText(ri.getValue());
+        reValue.setText(re.getValue());
+    }
+    
+    public void outMessage(String message){
+        outCod.setText(message);
+    }
+    
+    public void setInitValues(String[][] memory){
+        for(int i = 0; i<100; i++){
+            for(int j=0;j<2;j++){
+                tMemory.setValueAt(memory[i][j],i,j);
+            }
+        }
+    }
+>>>>>>> 4d26aad (fix: pull)
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHelpActionPerformed
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
     private void btnRunKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnRunKeyPressed
 
     }//GEN-LAST:event_btnRunKeyPressed
 
+<<<<<<< HEAD
+=======
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -503,7 +800,14 @@ public class VirtualMachine extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+<<<<<<< HEAD
     private javax.swing.JTextArea accValue;
+=======
+>>>>>>> 76b42c5 (fix: pull)
+=======
+    private javax.swing.JTextArea accValue;
+>>>>>>> 4d26aad (fix: pull)
     private javax.swing.JButton btnDebug;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnRun;
@@ -530,6 +834,8 @@ public class VirtualMachine extends javax.swing.JFrame {
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;
+<<<<<<< HEAD
+<<<<<<< HEAD
     private javax.swing.JTextArea mopValue;
     private javax.swing.JTextPane outCod;
     private javax.swing.JTextArea pcValue;
@@ -537,6 +843,26 @@ public class VirtualMachine extends javax.swing.JFrame {
     private javax.swing.JTextArea reValue;
     private javax.swing.JTextArea riValue;
     private javax.swing.JTextArea spValue;
+=======
+=======
+    private javax.swing.JTextArea mopValue;
+>>>>>>> 4d26aad (fix: pull)
+    private javax.swing.JTextPane outCod;
+    private javax.swing.JTextArea pcValue;
+    private javax.swing.JProgressBar progressBar;
+<<<<<<< HEAD
+    private javax.swing.JTextArea regValue1;
+    private javax.swing.JTextArea regValue2;
+    private javax.swing.JTextArea regValue3;
+    private javax.swing.JTextArea regValue4;
+    private javax.swing.JTextArea regValue5;
+    private javax.swing.JTextArea regValue6;
+>>>>>>> 76b42c5 (fix: pull)
+=======
+    private javax.swing.JTextArea reValue;
+    private javax.swing.JTextArea riValue;
+    private javax.swing.JTextArea spValue;
+>>>>>>> 4d26aad (fix: pull)
     private javax.swing.JTable tMemory;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,8 @@
 public class Register {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d26aad (fix: pull)
     String value;
     
     public Register(){
@@ -11,4 +15,10 @@ public class Register {
      public void setValue(String value){
         this.value = value;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 76b42c5 (fix: pull)
+=======
+>>>>>>> 4d26aad (fix: pull)
 }
