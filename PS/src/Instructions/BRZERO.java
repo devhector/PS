@@ -2,7 +2,7 @@ package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
 import Registers.ACC;
-import Registers.PC;
+import Registers.*;
 import javax.swing.JTextPane;
 
 public class BRZERO extends CompleteBinary implements Instruction{
@@ -22,6 +22,7 @@ public class BRZERO extends CompleteBinary implements Instruction{
         }
         if(toInt(ACC.getValue())==0 && toInt(opd1)>12 && toInt(opd1)<100){
             PC.setValue(opd1);
+			RI.setValue(this.opcode);
         }
     }
     

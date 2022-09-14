@@ -1,7 +1,7 @@
 package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
-import Registers.ACC;
+import Registers.*;
 import javax.swing.JTextPane;
 
 public class STORE extends CompleteBinary implements Instruction{
@@ -19,6 +19,7 @@ public class STORE extends CompleteBinary implements Instruction{
             Main.Error.showError("o store possui um argumento a mais");
         }
         opd1 = ACC.getValue();
+		RI.setValue(this.opcode);
     }
     
     @Override

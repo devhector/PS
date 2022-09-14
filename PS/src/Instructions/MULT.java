@@ -1,7 +1,7 @@
 package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
-import Registers.ACC;
+import Registers.*;
 import javax.swing.JTextPane;
 
 public class MULT extends CompleteBinary implements Instruction{
@@ -21,6 +21,7 @@ public class MULT extends CompleteBinary implements Instruction{
         }
         String aux = Integer.toBinaryString(Integer.parseInt(ACC.getValue(),2) * Integer.parseInt(opd1,2));
         ACC.setValue(completeBinary(aux));
+		RI.setValue(this.opcode);
     }
     
     @Override

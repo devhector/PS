@@ -2,6 +2,7 @@ package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
 import javax.swing.JTextPane;
+import Registers.*;
 
 public class COPY extends CompleteBinary implements Instruction{
     Integer numberOpd = 2;
@@ -19,8 +20,10 @@ public class COPY extends CompleteBinary implements Instruction{
             return;
         }
         opd1 = opd2;
-    }
-    
+		RI.setValue(this.opcode);
+	}
+
+
     @Override
     public Integer numberOpd() {
         return numberOpd;

@@ -3,6 +3,7 @@ package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
 import javax.swing.JTextPane;
+import Registers.*;
 
 public class STOP extends CompleteBinary implements Instruction{
     Integer numberOpd = 0;
@@ -14,6 +15,7 @@ public class STOP extends CompleteBinary implements Instruction{
     }
     @Override
     public void runInstruction(JTextPane outCode, String opd1, String opd2) {
+		RI.setValue(this.opcode);
         System.exit(0);
     }
     @Override

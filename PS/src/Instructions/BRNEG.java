@@ -1,10 +1,15 @@
 package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
-import Registers.PC;
+import Registers.*;
 import javax.swing.JTextPane;
 
 public class BRNEG extends CompleteBinary implements Instruction{
+    String opcode;
+    
+    public void BRNEG(){
+        this.opcode = "0000000000000101";
+    }
 
     @Override
     public void runInstruction(JTextPane outCode, String opd1, String opd2) {
@@ -16,6 +21,7 @@ public class BRNEG extends CompleteBinary implements Instruction{
         if(toInt(opd1)>=12 && toInt(opd1)<100){
             System.out.println(toInt(opd1));
             PC.setValue(opd1);
+			RI.setValue(this.opcode);
         }
         else{
             Main.Error.showError("endereco nao acessivel");

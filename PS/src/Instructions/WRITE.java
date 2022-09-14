@@ -2,6 +2,7 @@ package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
 import javax.swing.JTextPane;
+import Registers.*;
 
 public class WRITE extends CompleteBinary implements Instruction{
     String opcode;
@@ -18,6 +19,7 @@ public class WRITE extends CompleteBinary implements Instruction{
             return;
         }
         outCode.setText(opd1);
+		RI.setValue(this.opcode);
     }
     
     @Override

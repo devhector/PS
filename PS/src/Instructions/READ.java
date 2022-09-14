@@ -3,6 +3,7 @@ package Instructions;
 import Main.CompleteBinary;
 import Main.Instruction;
 import javax.swing.JTextPane;
+import Registers.*;
 
 public class READ extends CompleteBinary implements Instruction{
     String opcode;
@@ -20,6 +21,7 @@ public class READ extends CompleteBinary implements Instruction{
             return; 
         }
         opd1 = inOutCode.getText();
+		RI.setValue(this.opcode);
     }
     
     @Override

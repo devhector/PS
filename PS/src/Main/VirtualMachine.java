@@ -438,7 +438,7 @@ public class VirtualMachine extends javax.swing.JFrame {
             instruction = decodeInstruction(Memory.memoryGet(toInt(PC.getValue())));
             
             if(Memory.memoryGet(toInt(PC.getValue()))!=null){
-                RI.setValue(PC.getValue());
+                RI.setAddress(PC.getValue());
                 PC.setValue(toBin(toInt(PC.getValue())+instruction.numberOpd()+1));
             }
             else{
@@ -448,19 +448,19 @@ public class VirtualMachine extends javax.swing.JFrame {
             if(instruction instanceof RET  || instruction instanceof BR    || 
                instruction instanceof BRNEG|| instruction instanceof BRPOS || 
             instruction instanceof BRZERO){
-                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
+                opd1 = Memory.memoryGet(toInt(RI.getAddress())+1);
                 instruction.runInstruction(outCod, opd1, null);
             }
             else if(instruction instanceof ADD || instruction instanceof DIV  ||
                     instruction instanceof LOAD|| instruction instanceof MULT ||
                     instruction instanceof SUB){
-                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
+                opd1 = Memory.memoryGet(toInt(RI.getAddress())+1);
                 instruction.runInstruction(outCod, opd1, null);
 
             }
             else if (instruction instanceof COPY){
-                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
-                opd2 = Memory.memoryGet(toInt(RI.getValue())+2);
+                opd1 = Memory.memoryGet(toInt(RI.getAddress())+1);
+                opd2 = Memory.memoryGet(toInt(RI.getAddress())+2);
                 instruction.runInstruction(outCod, opd1, opd2);
             }
         
