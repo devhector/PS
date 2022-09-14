@@ -15,5 +15,19 @@ public class READ extends CompleteBinary implements Instruction{
         }
         opd1 = inOutCode.getText();
     }
+    Integer numberOpd = 1;
+    @Override
+    public Integer numberOpd() {
+        return numberOpd;
+    }
+    EndType end;
+    @Override
+    public void setEndType(EndType end) {
+        this.end = end;
+    }
 
+    @Override
+    public String getEndType() {
+        return this.end.toString();
+    }
 }

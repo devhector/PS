@@ -1,6 +1,8 @@
 package Main;
 
 import Instructions.*;
+import Registers.*;
+import static Main.Memory.*;
 import java.util.List;
 
 /**
@@ -15,7 +17,7 @@ public class VirtualMachine extends javax.swing.JFrame {
 
     public VirtualMachine() {
         initComponents();
-       
+        setInitValues();
     }
 
     @SuppressWarnings("unchecked")
@@ -377,9 +379,7 @@ public class VirtualMachine extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(136, 136, 136))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
@@ -414,8 +414,8 @@ public class VirtualMachine extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnRunCicle)
                         .addGap(18, 18, 18)
-                        .addComponent(btnDebug)
-                        .addGap(100, 100, 100))))
+                        .addComponent(btnDebug)))
+                .addGap(109, 109, 109))
         );
 
         pack();
@@ -423,54 +423,111 @@ public class VirtualMachine extends javax.swing.JFrame {
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
         Instruction instruction;
-        Register acc = new Register();
+        Integer position = 12;
+        Register ACC = new ACC();
+        Register PC = new PC();
+        PC.setValue(toBin(position));
+        Register MOP = new MOP();
+        Register RI = new RI();
+        Register RE = new RE();
+        Register SP = new SP();
+        SP.setValue(toBin(2));
+        
         String opcode = null, opd1 = null, opd2 = null;
-        String[] cod = inCod.getText().split("\n");
-        for (String command : cod){
-            Error error = new Error();
-            opd1 = null;
-            opd2 = null;
-            opcode = command.split(" ")[0].trim();
-            int size = command.split(" ").length;
-            if(size==2){
-                opd1 = command.split(" ")[1].trim();
+        String cod = inCod.getText();
+        
+        readContent(cod, position);
+        //dentro de looping
+        while(PC.getValue()!= null){
+            attScreen(ACC,PC,SP,MOP,RI,RE);
+            instruction = decodeInstruction(Memory.memoryGet(toInt(PC.getValue())));
+            if(Memory.memoryGet(toInt(PC.getValue()))!=null){
+                RI.setValue(toBin(toInt(PC.getValue())));
+                PC.setValue(toBin(toInt(PC.getValue())+instruction.numberOpd()+1));
             }
-            else if(size == 3){
-                opd1 = command.split(" ")[1].trim();
-                opd2 = command.split(" ")[size-1].trim();
+            else{
+                PC.setValue(null);
             }
-            if(opcode.length()!=16){
-                Error.showError("opcode não identificado");
+  
+            if(instruction instanceof RET  || instruction instanceof BR    || 
+               instruction instanceof BRNEG|| instruction instanceof BRPOS || 
+            instruction instanceof BRZERO){
+                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
+                instruction.runInstruction(outCod, PC, opd1, null);
             }
-            instruction = decodeInstruction(opcode,opd1,opd2);
-            //testar qual registrador vai precisar usar
-            if(instruction instanceof READ){
-                instruction.runInstruction(inCod, acc, opd1, opd2);    
+            else if(instruction instanceof ADD || instruction instanceof DIV  ||
+                    instruction instanceof LOAD|| instruction instanceof MULT ||
+                    instruction instanceof SUB){
+                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
+                instruction.runInstruction(outCod, ACC, opd1, null);
             }
-            else if(instruction instanceof STOP){
-                break;
+            else if (instruction instanceof COPY){
+                opd1 = Memory.memoryGet(toInt(RI.getValue())+1);
+                opd2 = Memory.memoryGet(toInt(RI.getValue())+2);
+                instruction.runInstruction(outCod, ACC, opd1, opd2);
             }
-            
-            instruction.runInstruction(inCod, acc, opd1, opd2);    
-            
-            //instruction.runInstructionPrint(outCod, opd1);
-            
-            attScreen(acc);
+        
+        } 
+        
+        /*
+        register = defineRegister(instruction);
+        if(instruction == null || register == null){
+            Error.showError("instrução não identificada");
         }
+        else if(instruction instanceof RET || instruction instanceof BRZERO || instruction instanceof BRPOS || instruction instanceof BRNEG || BR){
+            register = new PC();
+            instruction.runInstruction(inCod, register, opd1, opd2);
+        }
+        register = new ACC();
+        instruction.runInstruction(inCod, register, opd1, opd2);    
+        instruction.runInstructionPrint(outCod, opd1);
+        */
     }//GEN-LAST:event_btnRunActionPerformed
     
-    private Instruction decodeInstruction(String opcode, String opd1, String opd2) {
-        String op = (String) opcode.subSequence(12,16);
-        System.out.println(op);
+    private void readContent(String cod, Integer position) {
+         if(cod.length()>0 && cod.length()%16==0){
+            for(int i=0;i<cod.length();i+=16){
+                Memory.memorySet(position, cod.substring(i,i+16));
+                position++;
+            }
+        }
+    }
+    
+    public Integer toInt(String cod){
+        if(cod!=null)
+            return Integer.parseInt(cod,2);
+        return null;
+    }
+    
+    public String toBin(Integer number){
+        if(number != null){
+            String bin = Integer.toBinaryString(number);
+            String complete = "";
+            Integer left = 16 - bin.length();
+            for(int i = 0; i < left; i++){
+               complete+="0";
+            }
+            return complete + bin;
+        }
+        return null;
+    }
+  
+    private Instruction decodeInstruction(String command) {
         Instruction instruction = null;
-        switch(op){
+        String end, opcode;
+        if(command!=null){
+            end = command.substring(9, 12);
+            opcode = command.substring(12, 16);
+        }
+        else 
+            return instruction;
+        switch(opcode){
             case "0000": //BR: PC <- opd1
-                
                 break;
             case "0001": //BRPOS: PC <- opd1, se ACC > 0
           
                 break;
-            case "0010": //ADD: ACC <- ACC + OPD1
+            case "0010": //ADD: ACC <- ACC + opd1
                 instruction = new ADD();
                 break;
             case "0011": //LOAD: ACC <- opd1
@@ -515,17 +572,39 @@ public class VirtualMachine extends javax.swing.JFrame {
             default:
                 System.out.println("ERRO DE OPCODE");
         }
+        
+        /*if(end != null)
+            switch (end) {
+                case "000":
+                    instruction.setEndType(EndType.D);
+                    break;
+                case "001":
+                    instruction.setEndType(EndType.IN1);
+                    break;
+                case "010":
+                    instruction.setEndType(EndType.IN2);
+                    break;
+                case "100":
+                    instruction.setEndType(EndType.IM);
+                    break;
+                default:
+                    System.out.println("ERRO DE ENDEREÇAMENTO");
+                    break;
+            }
+        */
         return instruction;
     }
     
-    //public void attScreen(Register acc, Register pc, Register sp , Register mop, Register ri, Register re){
-    public void attScreen(Register acc ){
-        accValue.setText(acc.getValue());
-        /*pcValue.setText(pc.getValue());
-        spValue.setText(sp.getValue());
-        mopValue.setText(mop.getValue());
-        riValue.setText(ri.getValue());
-        reValue.setText(re.getValue());*/
+    public void attScreen(Register ACC, Register PC, Register SP, Register MOP, Register RI, Register RE){
+        for(int i=0;i<100;i++){
+            tMemory.setValueAt(Memory.memoryGet(i), i, 1);
+        }
+        accValue.setText(ACC.getValue());
+        pcValue.setText(PC.getValue());
+        spValue.setText(SP.getValue());
+        mopValue.setText(MOP.getValue());
+        riValue.setText(RI.getValue());
+        reValue.setText(RE.getValue());
     }
     
     public void outMessage(String message){
@@ -533,12 +612,14 @@ public class VirtualMachine extends javax.swing.JFrame {
     }
     
     public void setInitValues(){
-        List<String> memory = Memory.getAll();
+        memoryInit();
+        List<String> memory = Memory.memoryGetAll();
         for(int i=0;i<memory.size();i++){
             tMemory.setValueAt(i, i, 0);
             tMemory.setValueAt(memory.get(i), i, 1);
         }
     }
+    
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         // abrir pop up com infos das instruções
     }//GEN-LAST:event_btnHelpActionPerformed
@@ -591,5 +672,6 @@ public class VirtualMachine extends javax.swing.JFrame {
     private javax.swing.JTextArea spValue;
     private javax.swing.JTable tMemory;
     // End of variables declaration//GEN-END:variables
+
 
 }
