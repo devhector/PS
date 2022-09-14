@@ -21,7 +21,7 @@ public class ADD extends CompleteBinary implements Instruction{
         }
         String aux = Integer.toBinaryString(Integer.parseInt(ACC.getValue(),2) + Integer.parseInt(opd1,2));
         ACC.setValue(completeBinary(aux));
-		RI.setValue(this.opcode);
+		RI.setValue("0000000000000010");
     }
 
     @Override
